@@ -2,6 +2,7 @@
 Mine Sweeper Game on Console (Java)
 
 This is a simple version of minesweeper game that can be played on console.
+
 Ver 1.0:
 In the game you can create your game board with desired size. Also, the cells on the board show different numbers if they are not mines.
 -2: there is no mine around the related cell.
