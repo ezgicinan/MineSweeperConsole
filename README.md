@@ -1,7 +1,10 @@
 # MineSweeperConsole
-Mine Sweeper Game on Console (Java)
+Mine Sweeper Game on Console (Java) 1.1
 
 This is a simple version of minesweeper game that can be played on console.
+
+Ver 1.1:
+The players' nickname and their score are stored in a txtfile.
 
 Ver 1.0:
 In the game you can create your game board with desired size. Also, the cells on the board show different numbers if they are not mines.
