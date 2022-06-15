@@ -6,8 +6,11 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int row, column;
+        String nickName;
 
         System.out.println("Welcome to Mine Sweeper!");
+        System.out.println("Please enter your nickname: ");
+        nickName = scan.nextLine();
         System.out.println("Please, enter the game board size you would like to play. ");
         System.out.print("Row Value: ");
         row = scan.nextInt();
@@ -16,6 +19,9 @@ public class Main {
 
         MayinTarlasi mayin = new MayinTarlasi(row, column);
         mayin.run();
+
+        mayin.saveScore(nickName, mayin.score);
+
 
     }
 }

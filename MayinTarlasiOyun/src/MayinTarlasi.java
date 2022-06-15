@@ -1,5 +1,14 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;  // Import the IOException class to handle errors
+
+import static java.nio.file.StandardOpenOption.APPEND;
+import static java.nio.file.StandardOpenOption.CREATE;
 
 public class MayinTarlasi {
 
@@ -71,8 +80,10 @@ public class MayinTarlasi {
         }
     }
 
-    //Search secure area after clicking a safe place
-    /**private void openField(int r, int c){
+
+    /**
+     * //Search secure area after clicking a safe place, this will be developed later.
+     * private void openField(int r, int c){
         if( r < 0 || r >= this.rowValue || c < 0 || c >= this.colValue){
             return;
         } else if( gameBoard[r][c] != 0 && gameBoard[r][c] != -2 && gameMap[r][c] == -1) {
@@ -90,6 +101,7 @@ public class MayinTarlasi {
             openField(r+1, c);
         }
     }*/
+
     private void checkMayin(int row, int col) {
 
         if(gameBoard[row][col] == 0){
@@ -153,5 +165,31 @@ public class MayinTarlasi {
             System.out.print("-----");
 
         System.out.println();
+    }
+
+    public void saveScore (String nickname, int score){
+        String scoreValue = String.valueOf(score);
+        List<String> data = new ArrayList<>();
+        data.add(nickname);
+        data.add(scoreValue);
+
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("minesweeper_scores.txt", true));
+            for (String s: data
+                 ) {
+                writer.append(s + "\t");
+            }
+            writer.newLine();
+            writer.close();
+
+            /*if (scoreFile.createNewFile()) {
+                System.out.println("File created: " + scoreFile.getName());
+            } else {
+                System.out.println("File already exists.");
+            }*/
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
