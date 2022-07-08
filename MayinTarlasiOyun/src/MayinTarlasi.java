@@ -1,11 +1,8 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;  // Import the IOException class to handle errors
 
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.CREATE;
@@ -173,6 +170,7 @@ public class MayinTarlasi {
         data.add(nickname);
         data.add(scoreValue);
 
+        //Write down the score of current player to the end of the list.
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter("minesweeper_scores.txt", true));
             for (String s: data
@@ -181,12 +179,6 @@ public class MayinTarlasi {
             }
             writer.newLine();
             writer.close();
-
-            /*if (scoreFile.createNewFile()) {
-                System.out.println("File created: " + scoreFile.getName());
-            } else {
-                System.out.println("File already exists.");
-            }*/
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
