@@ -3,7 +3,7 @@ Mine Sweeper Game on Console (Java) 1.2
 
 This is a simple version of minesweeper game that can be played on console.
 
-Ver 1.2:
+Ver 1.3:
 The score list was shown in descending order on the console.
 
 Ver 1.1:
