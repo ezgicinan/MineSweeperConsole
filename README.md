@@ -1,5 +1,5 @@
 # MineSweeperConsole
-Mine Sweeper Game on Console (Java) 1.2
+Mine Sweeper Game on Console (Java) 1.3
 
 This is a simple version of minesweeper game that can be played on console.
 
